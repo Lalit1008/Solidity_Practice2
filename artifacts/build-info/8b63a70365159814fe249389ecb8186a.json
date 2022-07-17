@@ -1,0 +1,1036 @@
+{
+	"id": "8b63a70365159814fe249389ecb8186a",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.15",
+	"solcLongVersion": "0.8.15+commit.e14f2714",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"StorageFactory1.sol": {
+				"content": "// SPDX-License-Identifier: GPL-3.0\npragma solidity ^0.8.11;\n\nimport \"./CloneFactory.sol\";\n\ncontract StorageFactory{\n\n// for create clone of st\n\n\n\n\n\n}"
+			},
+			"CloneFactory.sol": {
+				"content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.11;\n\ncontract CloneFactory {\n\n  function createClone(address target) internal returns (address result) {\n    bytes20 targetBytes = bytes20(target);\n    assembly {\n      let clone := mload(0x40)\n      mstore(clone, 0x3d602d80600a3d3981f3363d3d373d3d3d363d73000000000000000000000000)\n      mstore(add(clone, 0x14), targetBytes)\n      mstore(add(clone, 0x28), 0x5af43d82803e903d91602b57fd5bf30000000000000000000000000000000000)\n      result := create(0, clone, 0x37)\n    }\n  }\n}\n"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			}
+		}
+	},
+	"output": {
+		"contracts": {
+			"CloneFactory.sol": {
+				"CloneFactory": {
+					"abi": [],
+					"devdoc": {
+						"kind": "dev",
+						"methods": {},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "    /* \"CloneFactory.sol\":58:528  contract CloneFactory {... */\n  mstore(0x40, 0x80)\n  callvalue\n  dup1\n  iszero\n  tag_1\n  jumpi\n  0x00\n  dup1\n  revert\ntag_1:\n  pop\n  dataSize(sub_0)\n  dup1\n  dataOffset(sub_0)\n  0x00\n  codecopy\n  0x00\n  return\nstop\n\nsub_0: assembly {\n        /* \"CloneFactory.sol\":58:528  contract CloneFactory {... */\n      mstore(0x40, 0x80)\n      0x00\n      dup1\n      revert\n\n    auxdata: 0xa2646970667358221220408aa68563791a2fc5877f0768f067364ea95890244026482edad015bb20d0bc64736f6c634300080f0033\n}\n",
+						"bytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220408aa68563791a2fc5877f0768f067364ea95890244026482edad015bb20d0bc64736f6c634300080f0033",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x3F DUP1 PUSH1 0x1D PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 BLOCKHASH DUP11 0xA6 DUP6 PUSH4 0x791A2FC5 DUP8 PUSH32 0x768F067364EA95890244026482EDAD015BB20D0BC64736F6C634300080F0033 ",
+							"sourceMap": "58:470:0:-:0;;;;;;;;;;;;;;;;;;;"
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "6080604052600080fdfea2646970667358221220408aa68563791a2fc5877f0768f067364ea95890244026482edad015bb20d0bc64736f6c634300080f0033",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 BLOCKHASH DUP11 0xA6 DUP6 PUSH4 0x791A2FC5 DUP8 PUSH32 0x768F067364EA95890244026482EDAD015BB20D0BC64736F6C634300080F0033 ",
+							"sourceMap": "58:470:0:-:0;;;;;"
+						},
+						"gasEstimates": {
+							"creation": {
+								"codeDepositCost": "12600",
+								"executionCost": "66",
+								"totalCost": "12666"
+							},
+							"internal": {
+								"createClone(address)": "infinite"
+							}
+						},
+						"legacyAssembly": {
+							".code": [
+								{
+									"begin": 58,
+									"end": 528,
+									"name": "PUSH",
+									"source": 0,
+									"value": "80"
+								},
+								{
+									"begin": 58,
+									"end": 528,
+									"name": "PUSH",
+									"source": 0,
+									"value": "40"
+								},
+								{
+									"begin": 58,
+									"end": 528,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 528,
+									"name": "CALLVALUE",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 528,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 528,
+									"name": "ISZERO",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 528,
+									"name": "PUSH [tag]",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 58,
+									"end": 528,
+									"name": "JUMPI",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 528,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 58,
+									"end": 528,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 528,
+									"name": "REVERT",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 528,
+									"name": "tag",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 58,
+									"end": 528,
+									"name": "JUMPDEST",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 528,
+									"name": "POP",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 528,
+									"name": "PUSH #[$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 58,
+									"end": 528,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 528,
+									"name": "PUSH [$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 58,
+									"end": 528,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 58,
+									"end": 528,
+									"name": "CODECOPY",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 528,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 58,
+									"end": 528,
+									"name": "RETURN",
+									"source": 0
+								}
+							],
+							".data": {
+								"0": {
+									".auxdata": "a2646970667358221220408aa68563791a2fc5877f0768f067364ea95890244026482edad015bb20d0bc64736f6c634300080f0033",
+									".code": [
+										{
+											"begin": 58,
+											"end": 528,
+											"name": "PUSH",
+											"source": 0,
+											"value": "80"
+										},
+										{
+											"begin": 58,
+											"end": 528,
+											"name": "PUSH",
+											"source": 0,
+											"value": "40"
+										},
+										{
+											"begin": 58,
+											"end": 528,
+											"name": "MSTORE",
+											"source": 0
+										},
+										{
+											"begin": 58,
+											"end": 528,
+											"name": "PUSH",
+											"source": 0,
+											"value": "0"
+										},
+										{
+											"begin": 58,
+											"end": 528,
+											"name": "DUP1",
+											"source": 0
+										},
+										{
+											"begin": 58,
+											"end": 528,
+											"name": "REVERT",
+											"source": 0
+										}
+									]
+								}
+							},
+							"sourceList": [
+								"CloneFactory.sol",
+								"StorageFactory1.sol",
+								"#utility.yul"
+							]
+						},
+						"methodIdentifiers": {}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"CloneFactory.sol\":\"CloneFactory\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"CloneFactory.sol\":{\"keccak256\":\"0x7524c1a2f740e0abd593e258dea2f7434e1e8d805e0df4bb9ef8069ebbfad0c5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ad3781694b0ca73fa4740cd667078c92b2d5d0e3821eee25800b045d8e074114\",\"dweb:/ipfs/QmbjpzwqMpixtgsNyr8aiEqQP9b1SWDyKWt2EhmL6QL1cQ\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [],
+						"types": null
+					},
+					"userdoc": {
+						"kind": "user",
+						"methods": {},
+						"version": 1
+					}
+				}
+			},
+			"StorageFactory1.sol": {
+				"StorageFactory": {
+					"abi": [],
+					"devdoc": {
+						"kind": "dev",
+						"methods": {},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "    /* \"StorageFactory1.sol\":92:150  contract StorageFactory{... */\n  mstore(0x40, 0x80)\n  callvalue\n  dup1\n  iszero\n  tag_1\n  jumpi\n  0x00\n  dup1\n  revert\ntag_1:\n  pop\n  dataSize(sub_0)\n  dup1\n  dataOffset(sub_0)\n  0x00\n  codecopy\n  0x00\n  return\nstop\n\nsub_0: assembly {\n        /* \"StorageFactory1.sol\":92:150  contract StorageFactory{... */\n      mstore(0x40, 0x80)\n      0x00\n      dup1\n      revert\n\n    auxdata: 0xa26469706673582212209c5327b2ae3957b9dcf0f9303d3e71c131af345e2d222509d1c9c08e4ddeff0264736f6c634300080f0033\n}\n",
+						"bytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212209c5327b2ae3957b9dcf0f9303d3e71c131af345e2d222509d1c9c08e4ddeff0264736f6c634300080f0033",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x3F DUP1 PUSH1 0x1D PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SWAP13 MSTORE8 0x27 0xB2 0xAE CODECOPY JUMPI 0xB9 0xDC CREATE 0xF9 ADDRESS RETURNDATASIZE RETURNDATACOPY PUSH18 0xC131AF345E2D222509D1C9C08E4DDEFF0264 PUSH20 0x6F6C634300080F00330000000000000000000000 ",
+							"sourceMap": "92:58:1:-:0;;;;;;;;;;;;;;;;;;;"
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "6080604052600080fdfea26469706673582212209c5327b2ae3957b9dcf0f9303d3e71c131af345e2d222509d1c9c08e4ddeff0264736f6c634300080f0033",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SWAP13 MSTORE8 0x27 0xB2 0xAE CODECOPY JUMPI 0xB9 0xDC CREATE 0xF9 ADDRESS RETURNDATASIZE RETURNDATACOPY PUSH18 0xC131AF345E2D222509D1C9C08E4DDEFF0264 PUSH20 0x6F6C634300080F00330000000000000000000000 ",
+							"sourceMap": "92:58:1:-:0;;;;;"
+						},
+						"gasEstimates": {
+							"creation": {
+								"codeDepositCost": "12600",
+								"executionCost": "66",
+								"totalCost": "12666"
+							}
+						},
+						"legacyAssembly": {
+							".code": [
+								{
+									"begin": 92,
+									"end": 150,
+									"name": "PUSH",
+									"source": 1,
+									"value": "80"
+								},
+								{
+									"begin": 92,
+									"end": 150,
+									"name": "PUSH",
+									"source": 1,
+									"value": "40"
+								},
+								{
+									"begin": 92,
+									"end": 150,
+									"name": "MSTORE",
+									"source": 1
+								},
+								{
+									"begin": 92,
+									"end": 150,
+									"name": "CALLVALUE",
+									"source": 1
+								},
+								{
+									"begin": 92,
+									"end": 150,
+									"name": "DUP1",
+									"source": 1
+								},
+								{
+									"begin": 92,
+									"end": 150,
+									"name": "ISZERO",
+									"source": 1
+								},
+								{
+									"begin": 92,
+									"end": 150,
+									"name": "PUSH [tag]",
+									"source": 1,
+									"value": "1"
+								},
+								{
+									"begin": 92,
+									"end": 150,
+									"name": "JUMPI",
+									"source": 1
+								},
+								{
+									"begin": 92,
+									"end": 150,
+									"name": "PUSH",
+									"source": 1,
+									"value": "0"
+								},
+								{
+									"begin": 92,
+									"end": 150,
+									"name": "DUP1",
+									"source": 1
+								},
+								{
+									"begin": 92,
+									"end": 150,
+									"name": "REVERT",
+									"source": 1
+								},
+								{
+									"begin": 92,
+									"end": 150,
+									"name": "tag",
+									"source": 1,
+									"value": "1"
+								},
+								{
+									"begin": 92,
+									"end": 150,
+									"name": "JUMPDEST",
+									"source": 1
+								},
+								{
+									"begin": 92,
+									"end": 150,
+									"name": "POP",
+									"source": 1
+								},
+								{
+									"begin": 92,
+									"end": 150,
+									"name": "PUSH #[$]",
+									"source": 1,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 92,
+									"end": 150,
+									"name": "DUP1",
+									"source": 1
+								},
+								{
+									"begin": 92,
+									"end": 150,
+									"name": "PUSH [$]",
+									"source": 1,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 92,
+									"end": 150,
+									"name": "PUSH",
+									"source": 1,
+									"value": "0"
+								},
+								{
+									"begin": 92,
+									"end": 150,
+									"name": "CODECOPY",
+									"source": 1
+								},
+								{
+									"begin": 92,
+									"end": 150,
+									"name": "PUSH",
+									"source": 1,
+									"value": "0"
+								},
+								{
+									"begin": 92,
+									"end": 150,
+									"name": "RETURN",
+									"source": 1
+								}
+							],
+							".data": {
+								"0": {
+									".auxdata": "a26469706673582212209c5327b2ae3957b9dcf0f9303d3e71c131af345e2d222509d1c9c08e4ddeff0264736f6c634300080f0033",
+									".code": [
+										{
+											"begin": 92,
+											"end": 150,
+											"name": "PUSH",
+											"source": 1,
+											"value": "80"
+										},
+										{
+											"begin": 92,
+											"end": 150,
+											"name": "PUSH",
+											"source": 1,
+											"value": "40"
+										},
+										{
+											"begin": 92,
+											"end": 150,
+											"name": "MSTORE",
+											"source": 1
+										},
+										{
+											"begin": 92,
+											"end": 150,
+											"name": "PUSH",
+											"source": 1,
+											"value": "0"
+										},
+										{
+											"begin": 92,
+											"end": 150,
+											"name": "DUP1",
+											"source": 1
+										},
+										{
+											"begin": 92,
+											"end": 150,
+											"name": "REVERT",
+											"source": 1
+										}
+									]
+								}
+							},
+							"sourceList": [
+								"CloneFactory.sol",
+								"StorageFactory1.sol",
+								"#utility.yul"
+							]
+						},
+						"methodIdentifiers": {}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"StorageFactory1.sol\":\"StorageFactory\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"CloneFactory.sol\":{\"keccak256\":\"0x7524c1a2f740e0abd593e258dea2f7434e1e8d805e0df4bb9ef8069ebbfad0c5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ad3781694b0ca73fa4740cd667078c92b2d5d0e3821eee25800b045d8e074114\",\"dweb:/ipfs/QmbjpzwqMpixtgsNyr8aiEqQP9b1SWDyKWt2EhmL6QL1cQ\"]},\"StorageFactory1.sol\":{\"keccak256\":\"0x48b22178ed0ae084135e7f013218b11af752702e9d710bf06d7e490762b18941\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://595e89d7914dd07423c642cc1db4522915c3f2f09a87ed095fb8654682b05442\",\"dweb:/ipfs/QmbG1r2m6jPenX1FW1wLmx1Y7QTHyspadkMhDfjKUwcJXS\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [],
+						"types": null
+					},
+					"userdoc": {
+						"kind": "user",
+						"methods": {},
+						"version": 1
+					}
+				}
+			}
+		},
+		"sources": {
+			"CloneFactory.sol": {
+				"ast": {
+					"absolutePath": "CloneFactory.sol",
+					"exportedSymbols": {
+						"CloneFactory": [
+							18
+						]
+					},
+					"id": 19,
+					"license": "MIT",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"^",
+								"0.8",
+								".11"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "32:24:0"
+						},
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"canonicalName": "CloneFactory",
+							"contractDependencies": [],
+							"contractKind": "contract",
+							"fullyImplemented": true,
+							"id": 18,
+							"linearizedBaseContracts": [
+								18
+							],
+							"name": "CloneFactory",
+							"nameLocation": "67:12:0",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"body": {
+										"id": 16,
+										"nodeType": "Block",
+										"src": "156:370:0",
+										"statements": [
+											{
+												"assignments": [
+													9
+												],
+												"declarations": [
+													{
+														"constant": false,
+														"id": 9,
+														"mutability": "mutable",
+														"name": "targetBytes",
+														"nameLocation": "170:11:0",
+														"nodeType": "VariableDeclaration",
+														"scope": 16,
+														"src": "162:19:0",
+														"stateVariable": false,
+														"storageLocation": "default",
+														"typeDescriptions": {
+															"typeIdentifier": "t_bytes20",
+															"typeString": "bytes20"
+														},
+														"typeName": {
+															"id": 8,
+															"name": "bytes20",
+															"nodeType": "ElementaryTypeName",
+															"src": "162:7:0",
+															"typeDescriptions": {
+																"typeIdentifier": "t_bytes20",
+																"typeString": "bytes20"
+															}
+														},
+														"visibility": "internal"
+													}
+												],
+												"id": 14,
+												"initialValue": {
+													"arguments": [
+														{
+															"id": 12,
+															"name": "target",
+															"nodeType": "Identifier",
+															"overloadedDeclarations": [],
+															"referencedDeclaration": 3,
+															"src": "192:6:0",
+															"typeDescriptions": {
+																"typeIdentifier": "t_address",
+																"typeString": "address"
+															}
+														}
+													],
+													"expression": {
+														"argumentTypes": [
+															{
+																"typeIdentifier": "t_address",
+																"typeString": "address"
+															}
+														],
+														"id": 11,
+														"isConstant": false,
+														"isLValue": false,
+														"isPure": true,
+														"lValueRequested": false,
+														"nodeType": "ElementaryTypeNameExpression",
+														"src": "184:7:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_type$_t_bytes20_$",
+															"typeString": "type(bytes20)"
+														},
+														"typeName": {
+															"id": 10,
+															"name": "bytes20",
+															"nodeType": "ElementaryTypeName",
+															"src": "184:7:0",
+															"typeDescriptions": {}
+														}
+													},
+													"id": 13,
+													"isConstant": false,
+													"isLValue": false,
+													"isPure": false,
+													"kind": "typeConversion",
+													"lValueRequested": false,
+													"names": [],
+													"nodeType": "FunctionCall",
+													"src": "184:15:0",
+													"tryCall": false,
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes20",
+														"typeString": "bytes20"
+													}
+												},
+												"nodeType": "VariableDeclarationStatement",
+												"src": "162:37:0"
+											},
+											{
+												"AST": {
+													"nodeType": "YulBlock",
+													"src": "214:308:0",
+													"statements": [
+														{
+															"nodeType": "YulVariableDeclaration",
+															"src": "222:24:0",
+															"value": {
+																"arguments": [
+																	{
+																		"kind": "number",
+																		"nodeType": "YulLiteral",
+																		"src": "241:4:0",
+																		"type": "",
+																		"value": "0x40"
+																	}
+																],
+																"functionName": {
+																	"name": "mload",
+																	"nodeType": "YulIdentifier",
+																	"src": "235:5:0"
+																},
+																"nodeType": "YulFunctionCall",
+																"src": "235:11:0"
+															},
+															"variables": [
+																{
+																	"name": "clone",
+																	"nodeType": "YulTypedName",
+																	"src": "226:5:0",
+																	"type": ""
+																}
+															]
+														},
+														{
+															"expression": {
+																"arguments": [
+																	{
+																		"name": "clone",
+																		"nodeType": "YulIdentifier",
+																		"src": "260:5:0"
+																	},
+																	{
+																		"kind": "number",
+																		"nodeType": "YulLiteral",
+																		"src": "267:66:0",
+																		"type": "",
+																		"value": "0x3d602d80600a3d3981f3363d3d373d3d3d363d73000000000000000000000000"
+																	}
+																],
+																"functionName": {
+																	"name": "mstore",
+																	"nodeType": "YulIdentifier",
+																	"src": "253:6:0"
+																},
+																"nodeType": "YulFunctionCall",
+																"src": "253:81:0"
+															},
+															"nodeType": "YulExpressionStatement",
+															"src": "253:81:0"
+														},
+														{
+															"expression": {
+																"arguments": [
+																	{
+																		"arguments": [
+																			{
+																				"name": "clone",
+																				"nodeType": "YulIdentifier",
+																				"src": "352:5:0"
+																			},
+																			{
+																				"kind": "number",
+																				"nodeType": "YulLiteral",
+																				"src": "359:4:0",
+																				"type": "",
+																				"value": "0x14"
+																			}
+																		],
+																		"functionName": {
+																			"name": "add",
+																			"nodeType": "YulIdentifier",
+																			"src": "348:3:0"
+																		},
+																		"nodeType": "YulFunctionCall",
+																		"src": "348:16:0"
+																	},
+																	{
+																		"name": "targetBytes",
+																		"nodeType": "YulIdentifier",
+																		"src": "366:11:0"
+																	}
+																],
+																"functionName": {
+																	"name": "mstore",
+																	"nodeType": "YulIdentifier",
+																	"src": "341:6:0"
+																},
+																"nodeType": "YulFunctionCall",
+																"src": "341:37:0"
+															},
+															"nodeType": "YulExpressionStatement",
+															"src": "341:37:0"
+														},
+														{
+															"expression": {
+																"arguments": [
+																	{
+																		"arguments": [
+																			{
+																				"name": "clone",
+																				"nodeType": "YulIdentifier",
+																				"src": "396:5:0"
+																			},
+																			{
+																				"kind": "number",
+																				"nodeType": "YulLiteral",
+																				"src": "403:4:0",
+																				"type": "",
+																				"value": "0x28"
+																			}
+																		],
+																		"functionName": {
+																			"name": "add",
+																			"nodeType": "YulIdentifier",
+																			"src": "392:3:0"
+																		},
+																		"nodeType": "YulFunctionCall",
+																		"src": "392:16:0"
+																	},
+																	{
+																		"kind": "number",
+																		"nodeType": "YulLiteral",
+																		"src": "410:66:0",
+																		"type": "",
+																		"value": "0x5af43d82803e903d91602b57fd5bf30000000000000000000000000000000000"
+																	}
+																],
+																"functionName": {
+																	"name": "mstore",
+																	"nodeType": "YulIdentifier",
+																	"src": "385:6:0"
+																},
+																"nodeType": "YulFunctionCall",
+																"src": "385:92:0"
+															},
+															"nodeType": "YulExpressionStatement",
+															"src": "385:92:0"
+														},
+														{
+															"nodeType": "YulAssignment",
+															"src": "484:32:0",
+															"value": {
+																"arguments": [
+																	{
+																		"kind": "number",
+																		"nodeType": "YulLiteral",
+																		"src": "501:1:0",
+																		"type": "",
+																		"value": "0"
+																	},
+																	{
+																		"name": "clone",
+																		"nodeType": "YulIdentifier",
+																		"src": "504:5:0"
+																	},
+																	{
+																		"kind": "number",
+																		"nodeType": "YulLiteral",
+																		"src": "511:4:0",
+																		"type": "",
+																		"value": "0x37"
+																	}
+																],
+																"functionName": {
+																	"name": "create",
+																	"nodeType": "YulIdentifier",
+																	"src": "494:6:0"
+																},
+																"nodeType": "YulFunctionCall",
+																"src": "494:22:0"
+															},
+															"variableNames": [
+																{
+																	"name": "result",
+																	"nodeType": "YulIdentifier",
+																	"src": "484:6:0"
+																}
+															]
+														}
+													]
+												},
+												"evmVersion": "london",
+												"externalReferences": [
+													{
+														"declaration": 6,
+														"isOffset": false,
+														"isSlot": false,
+														"src": "484:6:0",
+														"valueSize": 1
+													},
+													{
+														"declaration": 9,
+														"isOffset": false,
+														"isSlot": false,
+														"src": "366:11:0",
+														"valueSize": 1
+													}
+												],
+												"id": 15,
+												"nodeType": "InlineAssembly",
+												"src": "205:317:0"
+											}
+										]
+									},
+									"id": 17,
+									"implemented": true,
+									"kind": "function",
+									"modifiers": [],
+									"name": "createClone",
+									"nameLocation": "94:11:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 4,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 3,
+												"mutability": "mutable",
+												"name": "target",
+												"nameLocation": "114:6:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 17,
+												"src": "106:14:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 2,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "106:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "105:16:0"
+									},
+									"returnParameters": {
+										"id": 7,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 6,
+												"mutability": "mutable",
+												"name": "result",
+												"nameLocation": "148:6:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 17,
+												"src": "140:14:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 5,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "140:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "139:16:0"
+									},
+									"scope": 18,
+									"src": "85:441:0",
+									"stateMutability": "nonpayable",
+									"virtual": false,
+									"visibility": "internal"
+								}
+							],
+							"scope": 19,
+							"src": "58:470:0",
+							"usedErrors": []
+						}
+					],
+					"src": "32:497:0"
+				},
+				"id": 0
+			},
+			"StorageFactory1.sol": {
+				"ast": {
+					"absolutePath": "StorageFactory1.sol",
+					"exportedSymbols": {
+						"CloneFactory": [
+							18
+						],
+						"StorageFactory": [
+							22
+						]
+					},
+					"id": 23,
+					"license": "GPL-3.0",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 20,
+							"literals": [
+								"solidity",
+								"^",
+								"0.8",
+								".11"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "36:24:1"
+						},
+						{
+							"absolutePath": "CloneFactory.sol",
+							"file": "./CloneFactory.sol",
+							"id": 21,
+							"nameLocation": "-1:-1:-1",
+							"nodeType": "ImportDirective",
+							"scope": 23,
+							"sourceUnit": 19,
+							"src": "62:28:1",
+							"symbolAliases": [],
+							"unitAlias": ""
+						},
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"canonicalName": "StorageFactory",
+							"contractDependencies": [],
+							"contractKind": "contract",
+							"fullyImplemented": true,
+							"id": 22,
+							"linearizedBaseContracts": [
+								22
+							],
+							"name": "StorageFactory",
+							"nameLocation": "101:14:1",
+							"nodeType": "ContractDefinition",
+							"nodes": [],
+							"scope": 23,
+							"src": "92:58:1",
+							"usedErrors": []
+						}
+					],
+					"src": "36:114:1"
+				},
+				"id": 1
+			}
+		}
+	}
+}

@@ -1,0 +1,157 @@
+{
+	"compiler": {
+		"version": "0.8.15+commit.e14f2714"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_implementation",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_clonedContract",
+						"type": "address"
+					}
+				],
+				"name": "ClonedContract",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "admin",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "clonedContracts",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "createStrorage",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "i",
+						"type": "uint256"
+					}
+				],
+				"name": "getAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "implementation",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"StorageFactory.sol": "StorageFactory"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"CloneFactory.sol": {
+			"keccak256": "0x7524c1a2f740e0abd593e258dea2f7434e1e8d805e0df4bb9ef8069ebbfad0c5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ad3781694b0ca73fa4740cd667078c92b2d5d0e3821eee25800b045d8e074114",
+				"dweb:/ipfs/QmbjpzwqMpixtgsNyr8aiEqQP9b1SWDyKWt2EhmL6QL1cQ"
+			]
+		},
+		"Storage.sol": {
+			"keccak256": "0xaf536d6073230fd703494490939b288c49c1c397de8441fccefc44c9673e16f2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b60e3d826c8ea16de70e9e136d14194c42a774a8f578490ee8e28de625331992",
+				"dweb:/ipfs/QmNz2j5FZXuXExbFBUHphv4g2CsJmk23NVNi6yEYswJ8Qo"
+			]
+		},
+		"StorageFactory.sol": {
+			"keccak256": "0xef9273da1c57c7323ff42cff41e07339278a1db0def53651b1926dad7840c582",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://34be438f9dfd34604c62995e8ede1a424e5ddf68af377fc88e12a7925fc1f7c4",
+				"dweb:/ipfs/QmeyHXqzZ1xgZKe5cFjV3Lt2hZWwAEDHHx3vb6N6deoRrD"
+			]
+		}
+	},
+	"version": 1
+}
